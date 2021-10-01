@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsOptional } from 'class-validator';
 
-export class CreateFilmeDto {
+export class CreateParticipanteDto {
   @IsNotEmpty()
   nome: string;
 
@@ -8,8 +8,11 @@ export class CreateFilmeDto {
   imagem: string;
 
   @IsNotEmpty()
-  data_lancamento: number;
+  data_nascimento: Date;
 
   @IsNotEmpty()
-  tempo_duracao: number;
+  funcao: string;
+
+  @IsOptional()
+  filmeId: number;
 }
