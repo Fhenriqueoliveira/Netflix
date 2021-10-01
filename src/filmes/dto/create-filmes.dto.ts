@@ -8,7 +8,7 @@ export class CreateFilmeDto {
   imagem: string;
 
   @IsNotEmpty()
-  data_lancamento: number;
+  ano_lancamento: number;
 
   @IsNotEmpty()
   tempo_duracao: number;
