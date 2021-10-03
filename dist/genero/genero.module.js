@@ -14,8 +14,8 @@ let GeneroModule = class GeneroModule {
 };
 GeneroModule = __decorate([
     (0, common_1.Module)({
-        providers: [genero_service_1.GeneroService],
-        controllers: [genero_controller_1.GeneroController]
+        providers: [genero_service_1.GenerosService],
+        controllers: [genero_controller_1.GenerosController],
     })
 ], GeneroModule);
 exports.GeneroModule = GeneroModule;

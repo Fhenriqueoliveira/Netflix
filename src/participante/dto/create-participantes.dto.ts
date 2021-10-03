@@ -7,7 +7,7 @@ export class CreateParticipanteDto {
   @IsOptional()
   imagem: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   data_nascimento: Date;
 
   @IsNotEmpty()

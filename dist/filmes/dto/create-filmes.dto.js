@@ -24,7 +24,7 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", Number)
-], CreateFilmeDto.prototype, "data_lancamento", void 0);
+], CreateFilmeDto.prototype, "ano_lancamento", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", Number)

@@ -23,4 +23,33 @@ export class FilmesController {
   async create(@Body() createFilme: CreateFilmeDto): Promise<Filme> {
     return this.filmeService.createFilme(createFilme);
   }
+  @Get('/list')
+  @UsePipes(ValidationPipe)
+  async findMany(): Promise<Filme[]> {
+    return this.filmeService.findAll();
+  }
+  @Get('/list/:id')
+  @UsePipes(ValidationPipe)
+  async findUnique(@Param('id', ParseIntPipe) id: number) {
+    return this.filmeService.findOne(id);
+  }
+
+  @Put('/update/:id')
+  @UsePipes(ValidationPipe)
+  async update(
+    @Body() updateFilme: CreateFilmeDto,
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<Filme> {
+    return this.filmeService.update(id, updateFilme);
+  }
+  @Delete('/deleteOne/:id')
+  @UsePipes(ValidationPipe)
+  async delete(@Param('id') id: string) {
+    return this.filmeService.deleteOne({ id: Number(id) });
+  }
+  @Delete('/deleteAll')
+  @UsePipes(ValidationPipe)
+  async deleteMany() {
+    return this.filmeService.deleteAll();
+  }
 }

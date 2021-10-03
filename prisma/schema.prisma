@@ -19,15 +19,13 @@ model Filme {
 model Genero {
   id Int @default(autoincrement()) @id
   nome String
-  filme Filme? @relation(fields: [filmeId], references: [id])
-  filmeId Int?
+  filme Filme[]
 }
 model Participante {
   id Int @default(autoincrement()) @id
   nome String
   imagem String?
-  data_nascimento DateTime
+  data_nascimento DateTime?
   funcao String
-  filme Filme? @relation(fields: [filmeId], references: [id])
-  filmeId Int?
+  filme Filme[]
 }

@@ -14,8 +14,8 @@ let ParticipanteModule = class ParticipanteModule {
 };
 ParticipanteModule = __decorate([
     (0, common_1.Module)({
-        providers: [participante_service_1.ParticipanteService],
-        controllers: [participante_controller_1.ParticipanteController]
+        providers: [participante_service_1.ParticipantesService],
+        controllers: [participante_controller_1.ParticipantesController],
     })
 ], ParticipanteModule);
 exports.ParticipanteModule = ParticipanteModule;

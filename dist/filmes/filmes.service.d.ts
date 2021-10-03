@@ -4,4 +4,9 @@ export declare class FilmesService {
     private prisma;
     constructor(prisma: PrismaService);
     createFilme(data: Prisma.FilmeCreateInput): Promise<Filme>;
+    findAll(): Promise<Filme[]>;
+    findOne(filmeId: number): Promise<Filme>;
+    update(filmeId: number, data: Prisma.FilmeCreateInput): Promise<Filme>;
+    deleteOne(where: Prisma.FilmeWhereUniqueInput): Promise<Filme>;
+    deleteAll(): Promise<Prisma.BatchPayload>;
 }
