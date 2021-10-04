@@ -3,4 +3,6 @@ export declare class CreateFilmeDto {
     imagem: string;
     ano_lancamento: number;
     tempo_duracao: number;
+    participantes: number[];
+    genero: number[];
 }

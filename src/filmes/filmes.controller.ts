@@ -40,16 +40,16 @@ export class FilmesController {
     @Body() updateFilme: CreateFilmeDto,
     @Param('id', ParseIntPipe) id: number,
   ): Promise<Filme> {
-    return this.filmeService.update(id, updateFilme);
+    return this.filmeService.updateFilme(id, updateFilme);
   }
   @Delete('/deleteOne/:id')
   @UsePipes(ValidationPipe)
   async delete(@Param('id') id: string) {
-    return this.filmeService.deleteOne({ id: Number(id) });
+    return this.filmeService.deleteOneFilme({ id: Number(id) });
   }
   @Delete('/deleteAll')
   @UsePipes(ValidationPipe)
   async deleteMany() {
-    return this.filmeService.deleteAll();
+    return this.filmeService.deleteAllFilmes();
   }
 }

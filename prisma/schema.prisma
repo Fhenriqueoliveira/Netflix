@@ -11,8 +11,8 @@ model Filme {
   id Int @default(autoincrement()) @id
   nome String
   imagem String?
-  ano_lancamento Int
-  tempo_duracao Int
+  ano_lancamento Int?
+  tempo_duracao Int?
   genero Genero[]
   participante Participante[]
 }
@@ -24,8 +24,9 @@ model Genero {
 model Participante {
   id Int @default(autoincrement()) @id
   nome String
-  imagem String?
-  data_nascimento DateTime?
-  funcao String
-  filme Filme[]
+  imagem         String?
+  ano_nascimento Int
+  staff          Boolean
+  ator           Boolean
+  filmes         Filme[]
 }

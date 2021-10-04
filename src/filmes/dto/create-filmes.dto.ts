@@ -7,9 +7,15 @@ export class CreateFilmeDto {
   @IsOptional()
   imagem: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   ano_lancamento: number;
 
-  @IsNotEmpty()
+  @IsOptional()
   tempo_duracao: number;
+
+  @IsOptional()
+  participantes: number[];
+
+  @IsOptional()
+  genero: number[];
 }

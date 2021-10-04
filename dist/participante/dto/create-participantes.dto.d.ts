@@ -1,7 +1,7 @@
 export declare class CreateParticipanteDto {
     nome: string;
     imagem: string;
-    data_nascimento: Date;
+    ano_nascimento: number;
     funcao: string;
     filmeId: number;
 }

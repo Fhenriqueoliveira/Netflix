@@ -30,13 +30,13 @@ let FilmesController = class FilmesController {
         return this.filmeService.findOne(id);
     }
     async update(updateFilme, id) {
-        return this.filmeService.update(id, updateFilme);
+        return this.filmeService.updateFilme(id, updateFilme);
     }
     async delete(id) {
-        return this.filmeService.deleteOne({ id: Number(id) });
+        return this.filmeService.deleteOneFilme({ id: Number(id) });
     }
     async deleteMany() {
-        return this.filmeService.deleteAll();
+        return this.filmeService.deleteAllFilmes();
     }
 };
 __decorate([
