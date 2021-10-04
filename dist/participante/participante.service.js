@@ -17,7 +17,15 @@ let ParticipantesService = class ParticipantesService {
         this.prisma = prisma;
     }
     async create(data) {
-        return this.prisma.participante.create({ data });
+        var _a;
+        const filmes = (_a = data.filmes) === null || _a === void 0 ? void 0 : _a.map((filme) => ({
+            id: filme,
+        }));
+        return this.prisma.participante.create({
+            data: Object.assign(Object.assign({}, data), { filmes: {
+                    connect: filmes,
+                } }),
+        });
     }
     async findAll() {
         return this.prisma.participante.findMany();
@@ -27,14 +35,21 @@ let ParticipantesService = class ParticipantesService {
             where: {
                 id: participanteId,
             },
+            include: {
+                filmes: true,
+            },
         });
     }
-    async update(participanteId, data) {
-        return this.prisma.participante.update({
-            data,
-            where: {
-                id: participanteId,
-            },
+    async update(id, data) {
+        var _a;
+        const filmes = (_a = data.filmes) === null || _a === void 0 ? void 0 : _a.map((filme) => ({
+            id: filme,
+        }));
+        return await this.prisma.participante.update({
+            data: Object.assign(Object.assign({}, data), { filmes: {
+                    connect: filmes,
+                } }),
+            where: { id },
         });
     }
     async deleteOne(where) {

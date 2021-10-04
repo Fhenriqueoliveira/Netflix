@@ -27,11 +27,15 @@ __decorate([
 ], CreateParticipanteDto.prototype, "ano_nascimento", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], CreateParticipanteDto.prototype, "funcao", void 0);
+    __metadata("design:type", Boolean)
+], CreateParticipanteDto.prototype, "staff", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", Boolean)
+], CreateParticipanteDto.prototype, "ator", void 0);
 __decorate([
     (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", Number)
-], CreateParticipanteDto.prototype, "filmeId", void 0);
+    __metadata("design:type", Array)
+], CreateParticipanteDto.prototype, "filmes", void 0);
 exports.CreateParticipanteDto = CreateParticipanteDto;
 //# sourceMappingURL=create-participantes.dto.js.map

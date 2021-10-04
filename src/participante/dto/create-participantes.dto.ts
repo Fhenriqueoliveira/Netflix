@@ -9,10 +9,12 @@ export class CreateParticipanteDto {
 
   @IsOptional()
   ano_nascimento: number;
+  @IsNotEmpty()
+  staff: boolean;
 
   @IsNotEmpty()
-  funcao: string;
+  ator: boolean;
 
   @IsOptional()
-  filmeId: number;
+  filmes: number[];
 }
