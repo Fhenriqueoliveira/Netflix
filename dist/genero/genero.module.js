@@ -10,10 +10,12 @@ exports.GeneroModule = void 0;
 const common_1 = require("@nestjs/common");
 const genero_service_1 = require("./genero.service");
 const genero_controller_1 = require("./genero.controller");
+const prisma_module_1 = require("../prisma/prisma.module");
 let GeneroModule = class GeneroModule {
 };
 GeneroModule = __decorate([
     (0, common_1.Module)({
+        imports: [prisma_module_1.PrismaModule],
         providers: [genero_service_1.GenerosService],
         controllers: [genero_controller_1.GenerosController],
     })
